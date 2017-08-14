@@ -1,0 +1,229 @@
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    header {
+        height: 44px;
+        background-color: #ff841d;
+        line-height: 44px;
+        text-align: center;
+        position: relative;
+    }
+    
+    header .backIcon {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    header .left {
+        position: absolute;
+        color: white;
+        font-size: 0.28rem;
+        line-height: 44px;
+        left: 5px;
+    }
+    
+    header .center {
+        position: absolute;
+        width: 153px;
+        left: 50%;
+        height: 44px;
+        transform: translateX(-50%);
+    }
+    
+    header .center h1 {
+        height: 44px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 44px;
+        color: white;
+        margin: 0px;
+    }
+    
+    header .right {
+        width: 55px;
+        height: 44px;
+        position: absolute;
+        top: 0;
+        right: -2px;
+    }
+    
+    header .right a {
+        display: block;
+        width: 55px;
+        height: 44px;
+    }
+    
+    header .right img {
+        padding-top: 5px;
+        width: 34px;
+        display: block;
+    }
+    /*内容部分  */
+    
+    .clearfix::after {
+        content: '';
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    
+    .contain li {
+        width: 100%;
+        height: 128px;
+        padding: 14px 8px;
+    }
+    
+    .contain .pic {
+        float: left;
+        width: 110px;
+    }
+    
+    .contain .pic img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .contain .info {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    
+    .contain .info .title {
+        color: #333333;
+        word-break: break-all;
+        font-size: 15px;
+        line-height: 19px;
+        min-height: 57px;
+        text-align: left;
+        font-weight: normal;
+    }
+    
+    .contain .info .title span {
+        color: #ff6c00;
+    }
+    
+    .contain .info .icon {
+        margin-right: 5px;
+        font-weight: normal;
+    }
+    
+    .contain .other {
+        margin-top: 8px;
+        color: #a1a1a1;
+    }
+    
+    .contain .other .mall {
+        font-size: 12px;
+        float: left;
+    }
+    
+    .contain .other .comment {
+        float: right;
+        font-size: 12px;
+    }
+    
+    .contain .more a {
+        text-align: center;
+        border-radius: 4px;
+        width: 100%;
+        display: block;
+        line-height: 30px;
+        color: #f85000;
+        background-color: #fff6e8;
+        font-size: 13px;
+    }
+    /* 底部 */
+    
+    footer .footNav {
+        margin-top: 20px;
+        height: 36px;
+        background-color: #ebebeb;
+        border-bottom: 1px solid #ccc;
+        line-height: 36px;
+        padding-left: 8px;
+        font-size: 14px;
+    }
+    
+    footer .footNav .moreNext {
+        font-size: 16px;
+        font-weight: normal;
+    }
+    
+    footer .login {
+        background: #efefef;
+        border-top: 1px solid #c4c4c4;
+        border-bottom: 1px solid #c4c4c4;
+        height: 34px;
+        line-height: 34px;
+        margin-top: 25px;
+    }
+    
+    footer .login a {
+        float: left;
+        font-size: 14px;
+        border-right: 1px solid #c4c4c4;
+        text-align: center;
+        width: 33.3%;
+    }
+    
+    footer .login a:last-child {
+        border-right: none;
+    }
+    
+    footer .login a img {
+        vertical-align: middle;
+        margin-top: -5px;
+        margin-right: 2px;
+        width: 15px;
+        height: 15px;
+    }
+    
+    footer .bottomInfo {
+        background: #efefef;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px 0;
+        color: #666;
+    }
+    
+    footer .bottomInfo p {
+        color: #a1a1a1;
+        font-size: 12px;
+    }
+    
+    footer .bottomInfo .info1 {
+        color: red;
+    }
+    
+    footer .bottomInfo .info2 {
+        color: black;
+    }
+    /* 底部固定下载 */
+    
+    .APPDowload {
+        position: fixed;
+        right: 5px;
+        bottom: 20px;
+    }
+    
+    .APPDowload img {
+        width: 60px;
+    }

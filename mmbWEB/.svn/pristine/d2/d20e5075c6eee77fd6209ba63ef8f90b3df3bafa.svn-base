@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/saveMoney.css">
+    <link rel="stylesheet" href="./font/download/font_6zdzznjozwd0a4i/demo.css">
+    <link rel="stylesheet" href="./css/saveMList.css">
+    <link rel="stylesheet" href="./font/lishuyi-font/demo.css">
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('font/lishuyi-font/iconfont.eot');
+            src: url('font/lishuyi-font/iconfont.eot?#iefix') format('embedded-opentype'), url('font/lishuyi-font/iconfont.woff') format('woff'), url('font/lishuyi-font/iconfont.ttf') format('truetype'), url('font/lishuyi-font/iconfont.svg#iconfont') format('svg');
+        }
+        
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            /* font-weight: bold; */
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="left" id="back">
+            <a class="iconfont backIcon" href="javascript:;">&#xe697</a>
+        </div>
+        <div class="center">
+            <h1>国内折扣</h1>
+        </div>
+        <div class="right">
+            <a href="http://m.manmanbuy.com/?o=download">
+                <img src="./images/header_app.png" alt="">
+            </a>
+        </div>
+    </header>
+    <!--------- 内容区域 ------------------>
+    <div class="container"></div>
+    <footer>
+        <!-- 慢慢买广告app -->
+        <div class="MBApp">
+            <div class="logo"><img src="./images/logo.png" alt=""></div>
+            <div class="txt">
+                <p class="t1">慢慢买APP</p>
+                <p class="t2">专注全网比价,每一次购物都在为你省钱!</p>
+            </div>
+            <a href="http://m.manmanbuy.com/?o=download" class="open">立即打开</a>
+        </div>
+        <div class="login clearfix">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a id="goTop" href="javascript:void(0);"><img src="./images/top.jpg" alt="">返回顶部</a>
+        </div>
+        <!--底部评论 购买区域  -->
+        <div class="footer-cu ui-border-t">
+            <div tapmode="" class="footer-comment">
+                <a href="#newcomment"></a>
+                <div class="iconfont comCont">&#xe69e;</div>
+                <div class="tit">
+                    评论
+                </div>
+            </div>
+
+            <div class="foot-cubtn">
+                <ul>
+                    <li id="btngo" class="footer-gobuy">
+                        <div class="c" tapmode="hover">
+                            <a href="javascript:;" target="_blank"></a>
+                            <span class="iconfont shopCon">&#xe698;</span>
+                            <div class="tit">
+                                前往购买
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 底部固定APP下载图标 -->
+        <a class="APPDowload" href="http://m.manmanbuy.com/?o=download">
+            <img src="./images/APP.png" alt="">
+        </a>
+
+
+    </footer>
+</body>
+
+</html>
+<!--    模板   -->
+<script type="text/html" id="template">
+    <div class="cu-content">
+        <h3 class="title"> {{productName}}</h3>
+        <h4>{{productPinkage}}</h4>
+        <div class="info">
+            <span class="mall">{{productFrom}}</span>
+            <span class="addtime" style="margin-right: 4px;">{{productTime}}</span> <span class="author">{{productTips}}</span>
+            <span class="author"><a href="#newcomment" style="color:#4682c5;">{{productComCount}}</a></span>
+        </div>
+        <div class="content clearfix">
+            <div class="picwrap">{{@productImgSm}}</div>
+            <div class="conn">
+                <!--内容开始-->
+                <p class="couponinfo">
+                    {{productInfo2}}
+                </p>
+                <p class="couponinfo">
+                    {{productInfo1}}
+                </p>
+                <p class="couponinfo">
+                    促销类型：<a href="https://market.m.taobao.com/apps/aliyx/coupon/detail.html?wh_weex=true&amp;activityId=c419f75ba3fc4dacab36337081a0685a&amp;sellerId=736093685" target="_blank">{{productPinkage}}</a>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p style="text-align:center;">
+                    {{@productImgLg}}
+                </p>
+                <!--内容结束-->
+            </div>
+        </div>
+        <br>
+        <div class="golink"><a href="javascript:;" target="_blank" class="a-gobuy"><i class="icon-gobuy"></i>前往购买</a>
+        </div>
+    </div>
+
+    {{@productComment}}
+    <div class="Page_loading" style="display: block;">已经是最后一页！</div>
+    <div class="footNav">
+        <a href="javascript:;">首页</a>
+        <a class="iconfont moreNext" href="javascript:;">&#xe6a7</a>
+        <a href="./moneyctrl.html">省钱控</a>
+        <a class="iconfont moreNext" href="javascript:;">&#xe6a7</a>
+        <a href="javascript:;">{{productName}}</a>
+    </div>
+
+</script>
+<script src="./js/jquery.min-1.72.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./js/tools.js"></script>
+<script src="js/zepto.js"></script>
+<script src="js/event.js"></script>
+<script src="js/touch.js"></script>
+<script>
+    $(function() {
+        console.log(location.search);
+        console.log(typeof(location.search));
+        var id = location.search.slice(1);
+        console.log(id);
+        $.ajax({
+                url: 'http://139.199.192.48:9090/api/getmoneyctrlproduct',
+                data: {
+                    productid: id
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('.container').append(template('template', data.result[0]))
+                }
+            })
+            // 返回顶部按钮
+        Zepto('#goTop').tap(function() {
+            window.scrollTo(0, 0);
+
+        })
+
+        // 返回上一个页面
+        var back = document.getElementById("back");
+        Zepto('#back').tap(function() {
+            history.back();
+        })
+
+    })
+</script>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白菜价</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/lowestPrice.css"> 
+</head>
+
+
+<body>
+    <div class="lowestPrice_container">
+        <!--头部-->
+        <div class="lowestPrice_header">
+            <div class="LP_back ">
+                <a href="javascript:;" class="iconfont">&#xe600;</a>
+            </div>
+            <div class="LP_title">
+                <div class="title_content">
+                    <p>白菜价-淘宝内部券</p>
+                </div>
+            </div>
+            <div class="LP_updata">                
+            </div>
+        </div>
+        <!--导航栏-->
+        <div class="LP_navBar">
+            <div class="LP_nav">
+                <ul class="clearfix">
+                
+                </ul>
+                <div class="LP_nav_search2">
+                    <a href="javascript:;" class="iconfont">&#xe65f;</a>
+                </div>
+                <div class="LP_nav_search">
+                    <a href="javascript:;" class="iconfont">&#xe64f;</a>
+                </div>
+                
+                <div class="LP_searchBar">
+                    <span></span><input type="text" placeholder="搜索商品即可查内部券">
+                    <button>搜索</button>
+                </div>
+            </div>
+            <div class="LP_img">
+                <img src="./images/quan_banner_wap.png" alt="">
+            </div>
+        </div>
+        <!--返回顶部小箭头-->
+        <!--<div class="rocket">
+            <i class="iconfont">&#xe661;</i>
+        </div>-->
+        <!--商品列表-->
+        <div class="LP_goodsList">
+
+        </div>
+        <!--底部-->
+        <div class="LP_bottom">
+            <ul class="clearfix">
+                <li><a href="javascript:;">登录</a></li>
+                <li><a href="javascript:;">注册</a></li>
+                <li><a href="javascript:;"><span class="iconfont">&#xe661;</span>返回顶部</a></li>
+            </ul>
+            <div class="bottom_info">
+                <p><span>手机APP下载</span><span>慢慢买手机版</span><span>--掌上比价平台 </span></p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="./js/template-web.js"></script>
+<script src="./js/jquery-1.12.4.min.js"></script>
+<script src="./js/zepto.js"></script>
+<script src="./js/event.js"></script>
+<script src="./js/touch.js"></script>
+<!--<script src="./js/tools.js"></script>-->
+<script src="./js/lowestPrice.1.js"></script>
+
+
+
+<script type="text/html" id="template">
+    <!--创建模板-->
+    {{each result}}
+    <li data-id="{{$value.titleId}}">
+        <a href="javascript:;">{{$value.title}}</a>
+    </li>
+    {{/each}}
+</script>
+
+<!--创建商品模板-->
+<script type="text/html" id="goodsList">
+    {{each result}}
+    <div class="goods">
+        <div class="goods_img left">
+            {{@ $value.productImg}}
+        </div>
+        <div class="goods_info left">
+            <p class="info_title">{{@ $value.productName}}</p>
+            <p class="info_price">{{@ $value.productPrice}}</p>
+            <div class="info_progress">
+                 {{@ $value.productCouponRemain}}
+            </div>
+            <div class="info_links">
+                {{@ $value.productCoupon}} {{@ $value.productHref}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script>
+    //获取元素
+    var ul = document.querySelector(".LP_nav ul");
+    //使用ajax请求数据
+    //创建异步对象
+    var xhr = new XMLHttpRequest();
+    //请求行
+    xhr.open("get", "http://139.199.192.48:9090/api/getbaicaijiatitle");
+    //回调函数
+    xhr.onreadystatechange = function () {
+        // console.log(xhr.responseText);
+        //判断状态
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var result = JSON.parse(xhr.responseText);
+            // console.log(result);
+            // var res =xhr.responseText;
+            // var result=eval('('+res+')');
+
+            //调用模板引擎方法       
+            var temp = template("template", result)
+            //将数据渲染到页面上
+            //template()生成的是一个字符串，append()方法追加的是一个元素，不会解析元素里面的标签；而innerHTML方法在可以解析标签
+            // ul.append(temp);//使用append时会将标签当做字符串直接添加到页面上，不会解析标签
+            ul.innerHTML = temp;
+
+        }
+    }
+
+    //请求主体
+    xhr.send(null);
+
+</script>
+<script>
+    // $(function () {
+    //     $.ajax({
+    //         url: "http://139.199.192.48:9090/api/getbaicaijiaproduct",
+    //         data: {
+    //             titleid: 0
+    //         },
+    //         success: function (data) {
+    //             console.log(data);
+    //             //调用模板
+    //             var goods=template("goodsList",data);
+    //             console.log(goods);
+    //             // $(".LP_goodsList").html(goods);
+    //             document.querySelector(".LP_goodsList").innerHTML=goods;
+    //         }
+    //     })
+    // })
+    var goods = document.querySelector(".LP_goodsList");
+    //使用ajax请求数据
+    //创建异步对象
+    var xhr2 = new XMLHttpRequest();
+    //请求行
+    xhr2.open("get", "http://139.199.192.48:9090/api/getbaicaijiaproduct?titleid=0");
+    //回调函数
+    xhr2.onreadystatechange = function () {
+        // console.log(xhr2.responseText);
+        //判断状态
+        if (xhr2.readyState == 4 && xhr2.status == 200) {
+            var result2 = JSON.parse(xhr2.responseText);
+            // console.log(result2);
+            // var res =xhr.responseText;
+            // var result=eval('('+res+')');
+
+            //调用模板引擎方法       
+            var abc = template("goodsList", result2)
+            // console.log(abc);
+            // htmlencode(abc);
+            //将数据渲染到页面上
+            //template()生成的是一个字符串，append()方法追加的是一个元素，不会解析元素里面的标签；而innerHTML方法在可以解析标签
+            // ul.append(temp);//使用append时会将标签当做字符串直接添加到页面上，不会解析标签
+            goods.innerHTML = abc;
+
+        }
+    }
+    xhr2.send(null);
+</script>

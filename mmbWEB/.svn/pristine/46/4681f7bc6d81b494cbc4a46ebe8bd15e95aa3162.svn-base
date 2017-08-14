@@ -1,0 +1,371 @@
+/* 担心有些ie浏览器 不识别 媒体查询 only   */
+@media only screen and (max-width: 1080px), only screen and (max-device-width: 1080px) {
+  html,
+  body {
+    font-size: 168.75px;
+  }
+}
+@media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
+  html,
+  body {
+    font-size: 150px;
+  }
+}
+@media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
+  html,
+  body {
+    font-size: 125px;
+  }
+}
+@media only screen and (max-width: 720px), only screen and (max-device-width: 720px) {
+  html,
+  body {
+    font-size: 112.5px;
+  }
+}
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+  html,
+  body {
+    font-size: 100px;
+  }
+}
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+  html,
+  body {
+    font-size: 93.75px;
+  }
+}
+@media only screen and (max-width: 540px), only screen and (max-device-width: 540px) {
+  html,
+  body {
+    font-size: 84.375px;
+  }
+}
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  html,
+  body {
+    font-size: 75px;
+  }
+}
+@media only screen and (max-width: 414px), only screen and (max-device-width: 414px) {
+  html,
+  body {
+    font-size: 64.6875px;
+  }
+}
+@media only screen and (max-width: 400px), only screen and (max-device-width: 400px) {
+  html,
+  body {
+    font-size: 62.5px;
+  }
+}
+@media only screen and (max-width: 375px), only screen and (max-device-width: 375px) {
+  html,
+  body {
+    font-size: 58.59375px;
+  }
+}
+@media only screen and (max-width: 360px), only screen and (max-device-width: 360px) {
+  html,
+  body {
+    font-size: 56.25px;
+  }
+}
+@media only screen and (max-width: 320px), only screen and (max-device-width: 320px) {
+  html,
+  body {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 240px), only screen and (max-device-width: 240px) {
+  html,
+  body {
+    font-size: 37.5px;
+  }
+}
+@media screen and (width: 6.4rem) {
+  html {
+    font-size: 1rem;
+  }
+}
+html,
+body,
+div,
+header,
+nav,
+li,
+ul,
+ol,
+footer,
+section,
+aside,
+input,
+article {
+  margin: 0;
+  padding: 0;
+  /* 盒子模型的 怪异模式  */
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* 移动端 a标签 点击高亮 */
+  -webkit-tap-highlight-color: transparent;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  /* 解决图片默认的3像素  */
+  display: block;
+}
+input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* 清楚浮动 */
+.clearfix::after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+}
+/*字体图标*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: #f1f1f1;
+}
+/*顶部*/
+.skiphop_top {
+  position: relative;
+  height: 50px;
+  padding: 0 .68rem 0 .5rem;
+  background-color: #ff8b00;
+  overflow: hidden;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  background-size: .34rem .34rem;
+}
+.skiphop_top > a.glyphicon-menu-left {
+  position: absolute;
+  left: 0;
+  width: .5rem;
+  height: inherit;
+  font-size: 24px;
+  color: #fff;
+  line-height: 50px;
+}
+.skiphop_top > a.st_download {
+  position: absolute;
+  right: .1rem;
+  top: 0;
+  width: .68rem;
+  height: inherit;
+  background: url("../images/header_app.png") no-repeat center / 0.34rem 0.34rem;
+}
+/*头部菜单栏*/
+.skiphop_menu {
+  height: 50px;
+  position: relative;
+  padding-right: .5rem;
+  background-color: #fff;
+  border-bottom: 2px solid #dadada;
+  overflow: hidden;
+  line-height: 50px;
+}
+.skiphop_menu .skm_left {
+  height: inherit;
+  border-right: 1px solid #dadada;
+}
+.skiphop_menu .skm_left li {
+  float: left;
+  position: relative;
+  width: 33.33%;
+  height: 50px;
+}
+.skiphop_menu .skm_left li a {
+  float: left;
+  height: inherit;
+  font-size: 25px;
+  margin-left: 40%;
+  line-height: 50px;
+  text-align: center;
+}
+.skiphop_menu .skm_left li .glyphicon-triangle-bottom {
+  float: left;
+  position: absolute;
+  width: .24rem;
+  height: 50px;
+  margin-left: 0.05rem;
+  font-size: 16px;
+  color: #565656;
+  line-height: 50px;
+}
+.skiphop_menu .skm_right {
+  position: absolute;
+  right: 0.05rem;
+  top: -0.03rem;
+  width: .5rem;
+  height: inherit;
+  font-size: 35px;
+  color: #808080;
+  text-align: center;
+  line-height: 50px;
+}
+.skiphop_menu .show {
+  display: block;
+}
+/*店铺下拉框*/
+.skiphop_shop,
+.skiphop_area,
+.skiphop_priceDown {
+  position: absolute;
+  width: 100%;
+  background-color: #ffffff;
+  display: none;
+  z-index: 10;
+}
+.skiphop_shop li,
+.skiphop_area li,
+.skiphop_priceDown li {
+  position: relative;
+  height: .5rem;
+  padding-left: .2rem;
+  line-height: .5rem;
+  font-size: .23rem;
+  color: black;
+  border-top: 1px solid #ededed;
+}
+.skiphop_shop li.sp_draw::after,
+.skiphop_area li.sp_draw::after,
+.skiphop_priceDown li.sp_draw::after {
+  content: '√';
+  display: block;
+  position: absolute;
+  right: .2rem;
+  top: 0.06rem;
+  width: .4rem;
+  height: 40px;
+  font-size: 30px;
+  color: #ff4400;
+  line-height: 40px;
+  text-align: center;
+}
+/*筛选框*/
+.skiphop_filtrate {
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: .15rem;
+  background-color: #f7f7f7;
+  z-index: 10;
+}
+.skiphop_filtrate .spf_search {
+  position: relative;
+  padding-right: .8rem;
+  height: 55px;
+}
+.skiphop_filtrate .spf_search > input {
+  font-size: .24rem;
+  padding-left: .5rem;
+  outline: none;
+}
+.skiphop_filtrate .spf_search > span {
+  position: absolute;
+  top: 0.05rem;
+  left: 0;
+  width: .5rem;
+  height: inherit;
+  background: url("../images/icon_bar.png") -85px 5px;
+}
+.skiphop_filtrate .spf_search > a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: .8rem;
+  height: inherit;
+  line-height: .55rem;
+  font-size: 24px;
+  color: #000;
+  outline: none;
+  text-align: center;
+}
+.skiphop_filtrate .spf_sort,
+.skiphop_filtrate .spf_classify {
+  padding-top: .2rem;
+}
+.skiphop_filtrate .spf_sort > h4,
+.skiphop_filtrate .spf_classify > h4 {
+  font-size: 30px;
+  color: #000;
+}
+.skiphop_filtrate .spf_sort > a,
+.skiphop_filtrate .spf_classify > a {
+  float: left;
+  margin-right: .15rem;
+  padding: .1rem .6rem;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  font-size: 22px;
+  color: #000;
+}
+.skiphop_filtrate .spf_sort .sort_links,
+.skiphop_filtrate .spf_classify .sort_links {
+  text-decoration: none;
+  background-color: #ff9501;
+  color: #fff;
+}
+.skiphop_filtrate .spf_classify > a {
+  width: 23%;
+  text-align: center;
+  padding: .1rem;
+  margin-bottom: .15rem;
+}
+/*商品列表*/
+.skiphop_list {
+  padding: .10rem;
+}
+.skiphop_list > a {
+  float: left;
+  width: 49%;
+  padding: .15rem .1rem;
+  margin-right: .15rem;
+  margin-bottom: .15rem;
+  background-color: #fff;
+}
+.skiphop_list > a > img {
+  width: 100%;
+  height: 4.5rem;
+}
+.skiphop_list > a > p {
+  margin-top: .1rem;
+  font-size: 25px;
+  color: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.skiphop_list > a > .skl_price {
+  color: red;
+  font-size: 35px;
+}
+.skiphop_list > a:nth-of-type(2n) {
+  margin-right: 0;
+}

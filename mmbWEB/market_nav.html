@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="bootStarp/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/media.css"/>
+    <link rel="stylesheet" href="css/market_nav.css"/>
+</head>
+<body>
+
+<nav class="market-nav">
+    <h2>
+        <span class="nav-left "><a href="index.html" class="glyphicon glyphicon-menu-left"></a></span>
+        商场导航
+        <span class="nav-right top-download"></span>
+    </h2>
+</nav>
+<section class="content">
+    <!--<div class="">-->
+        <!--<a href=""><span><img src="" /></span>京东商城</a>-->
+    <!--</div>-->
+</section>
+
+
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="bootStarp/js/bootstrap.min.js"></script>
+<script src="js/template-web.js"></script>
+
+<script type="text/html" id="template">
+{{each result}}
+<div class="" id="{{$value.navId}}">
+    <a href="{{$value.navHref}}"><span><img src="{{$value.navImg}}" /></span>{{$value.navTitle}}</a>
+</div>
+
+{{/each}}
+</script>
+
+
+<script>
+
+    $(function(){
+        $.ajax({
+            url:"http://139.199.192.48:9090/api/getsitenav",
+            success:function(data){
+                console.log(data);
+                $(".content").html(template("template",data));
+            }
+        })
+    })
+</script>
+</body>
+</html>

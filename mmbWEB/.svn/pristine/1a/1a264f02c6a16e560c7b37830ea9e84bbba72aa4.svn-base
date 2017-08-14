@@ -1,0 +1,582 @@
+html,
+body,
+div,
+header,
+nav,
+li,
+ul,
+ol,
+footer,
+section,
+aside,
+input,
+article,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+  /* 盒子模型的 怪异模式  */
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none!important;
+  color: inherit;
+  display: block;
+  /* 移动端 a标签 点击高亮 */
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus {
+  text-decoration: none!important;
+}
+a:hover {
+  text-decoration: none!important;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  /* 解决图片默认的3像素  */
+  display: block;
+}
+input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* 清楚浮动 */
+.clearfix::after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font2/iconfont.eot');
+  src: url('../font2/iconfont.eot?#iefix') format('embedded-opentype'), url('../fon2/iconfont.woff') format('woff'), url('../font2/iconfont.ttf') format('truetype'), url('../font2/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont";
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/lishuyi-font/iconfont.eot');
+  src: url('../font/lishuyi-font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/lishuyi-font/iconfont.woff') format('woff'), url('../font/lishuyi-font/iconfont.ttf') format('truetype'), url('../font/lishuyi-font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+header {
+  width: 100%;
+  height: 0.44rem;
+  background-color: #ff841d;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+header a {
+  display: block;
+  position: relative;
+}
+header a .iconfont {
+  left: 0.10rem;
+  top: .12rem;
+  width: 0.1rem;
+  height: .16rem;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  font-size: 0.17rem;
+}
+header .discount {
+  width: 100%;
+  height: 0.44rem;
+  font-size: 0.20rem;
+  text-align: center;
+  line-height: 0.4rem;
+  color: white;
+  font-weight: bold;
+}
+header .AppLoad {
+  top: 0.05rem;
+  right: 0.20rem;
+  background: url(../images/header_app.png) center / 0.3rem no-repeat;
+  width: .34rem;
+  height: .34rem;
+  position: absolute;
+}
+.taoUl {
+  margin-top: 0.44rem;
+}
+.content-Img {
+  padding: .14rem .08rem;
+  height: 1.28rem;
+  width: 100%;
+}
+.content-Img a {
+  height: 1.0rem;
+  position: relative;
+}
+.content-Img a .pic {
+  left: 0;
+  position: absolute;
+}
+.content-Img a .pic img {
+  width: 1.0rem;
+  height: 1.0rem;
+}
+.content-Img a .info {
+  height: 1rem;
+  width: 100%;
+  padding-left: 1.2rem;
+  padding-top: 0.05rem;
+}
+.content-Img a .info .title {
+  font-size: 0.14rem;
+  width: 100%;
+  height: 0.6rem;
+}
+.content-Img a .info .title span {
+  color: red;
+  font-size: .15rem;
+}
+.content-Img a .info .title-tool {
+  float: left;
+  width: 100%;
+  height: 0.5rem;
+  font-size: .12rem;
+}
+.content-Img a .info .title-tool span {
+  margin-top: 0.1rem;
+  float: left;
+}
+.content-Img a .info .title-tool .brand {
+  color: #a1a1a1;
+}
+.content-Img a .info .title-tool .iconfont {
+  font-size: .12rem;
+  float: right;
+  color: #a1a1a1;
+}
+#mid-content {
+  margin-top: .60rem;
+  width: 100%;
+  padding: 0 .1rem;
+  overflow: hidden;
+}
+#mid-content #info-title h3 {
+  font-size: .18rem;
+  height: .26rem;
+  font-weight: bold;
+}
+#mid-content #info-title h4 {
+  font-size: .15rem;
+  color: #ff6c00;
+  margin-top: .04rem;
+}
+#mid-content .date-tool {
+  font-size: .12rem;
+  color: #999999;
+  line-height: .5rem;
+}
+#mid-content #r-content {
+  font-size: .16rem;
+  line-height: .24rem;
+  color: #606060;
+  width: 100%;
+  overflow: hidden;
+  word-break: break-all;
+}
+#mid-content #r-content .content-pic img {
+  float: right !important;
+  width: 1.5rem;
+}
+#mid-content #r-content p {
+  margin-top: .06rem;
+}
+#mid-content #r-content p a {
+  display: inline;
+  color: #4682c5;
+}
+#mid-content #r-content .report {
+  margin-top: .06rem;
+}
+#mid-content #r-content .report button {
+  border: none;
+  background-color: transparent;
+  font-size: .16rem;
+  color: #000000;
+}
+#mid-content .go-buy {
+  padding: 0rem .2rem;
+  margin-top: -0.6rem;
+  margin-bottom: .3rem;
+  vertical-align: middle;
+}
+#mid-content .go-buy a {
+  display: inline-block;
+  width: 100%;
+  height: .4rem;
+  font-size: .12rem;
+  line-height: .4rem;
+  background-color: #ff9000;
+  text-align: center;
+  color: #fff8ff;
+  margin-top: .3rem;
+}
+#mid-content .comment {
+  font-size: .16rem;
+  width: 100%;
+  position: relative;
+}
+#mid-content .comment .comment-area {
+  margin-top: .1rem;
+  margin-bottom: .1rem;
+  height: 1rem;
+  border: 2px solid #eceae8;
+}
+#mid-content .comment .comment-area .submit-area {
+  height: 70%;
+  border-bottom: 1px solid #eceae8;
+}
+#mid-content .comment .comment-area .write-area {
+  height: 30%;
+  border-bottom: 1px solid #eceae8;
+}
+#mid-content .comment .publish {
+  position: absolute;
+  background-color: #ff841d;
+  width: .86rem;
+  height: .3rem;
+  text-align: center;
+  right: .0rem;
+  margin-top: -0.41rem;
+  outline-style: none;
+  border: none;
+  color: white;
+}
+#mid-content .comment a {
+  line-height: .3rem;
+}
+#mid-content .comment .cu-content {
+  padding: 4px 10px;
+}
+#mid-content .comment .cu-content h3 {
+  font-size: 18px;
+  margin: 10px auto 5px auto;
+  font-weight: 800;
+  text-align: left;
+  color: #5a5a5a;
+  line-height: normal;
+}
+#mid-content .comment .cu-content h4 {
+  color: #ff6c00;
+  display: block;
+  font-size: 15px;
+}
+#mid-content .comment .cu-content .info {
+  margin: 12px auto;
+  color: #999;
+  font-size: 12px;
+  line-height: 24px;
+}
+#mid-content .comment .cu-content .info .mall {
+  margin: 0px 4px;
+}
+#mid-content .comment .cu-content .info span {
+  color: #999;
+  vertical-align: middle;
+}
+#mid-content .comment .cu-content .info .author a {
+  color: #4682c5;
+}
+#mid-content .comment .cu-content .content .picwrap {
+  width: 120px;
+  float: right;
+  margin: 12px auto 12px;
+  overflow: hidden;
+}
+#mid-content .comment .cu-content .content .picwrap img {
+  width: 120px;
+  height: 120px;
+  border: none;
+  vertical-align: middle;
+}
+#mid-content .comment .cu-content .content .conn {
+  font-size: 16px;
+  line-height: 24px;
+  color: #606060;
+  padding-bottom: 20px;
+}
+#mid-content .comment .cu-content .content .conn p {
+  margin: 6px auto;
+}
+#mid-content .comment .cu-content .content .conn a {
+  color: #4682c5;
+}
+#mid-content .comment .cu-content .content .conn img {
+  width: 100%;
+}
+#mid-content .comment .cu-content .content .conn .couponinfo {
+  margin-top: 20px;
+  font-size: 14px;
+}
+#mid-content .comment .cu-content-pl .tit {
+  font-size: 16px;
+  padding: 6px 8px;
+}
+#mid-content .comment .cu-content-pl .reply {
+  padding: 6px 8px;
+}
+#mid-content .comment .cu-content-pl .reply .form {
+  border: 2px solid #eceae8;
+  border-radius: 2xp;
+  padding: 4px 0 0 4px;
+  position: relative;
+  width: 98%;
+  margin: 0 auto;
+}
+#mid-content .comment .cu-content-pl .reply .form textarea {
+  width: 100%;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: none;
+  line-height: 22px;
+  font-size: 14px;
+  outline: 0;
+  color: #666;
+  height: 68px;
+}
+#mid-content .comment .cu-content-pl .reply .form .ctrl {
+  background-color: #fbfbfb;
+  height: 36px;
+  margin-left: -4px;
+  border-top: solid 1px #f2f2f2;
+}
+#mid-content .comment .cu-content-pl .reply .form .ctrl input {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  background: #ff841d;
+  border: 2px solid #ff841d;
+  border-left: none;
+  border-top: none;
+  padding: 0px;
+  width: 100px;
+  height: 39px;
+  color: #fff;
+  outline: 0;
+  border-radius: 0 0 2px 0;
+  font-size: 16px;
+}
+#mid-content .comment .cu-content-pl .list ul li {
+  padding: 18px 10px;
+}
+#mid-content .comment .cu-content-pl .list ul li .userimg {
+  width: 40px;
+  float: left;
+  overflow: hidden;
+}
+#mid-content .comment .cu-content-pl .list ul li .userimg img {
+  width: 40px;
+  background-position: top;
+  border-radius: 50%;
+  height: 40px;
+}
+#mid-content .comment .cu-content-pl .list ul li .con {
+  overflow: hidden;
+  padding-left: 10px;
+}
+#mid-content .comment .cu-content-pl .list ul li .con .name {
+  color: #2e8b01;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+#mid-content .comment .cu-content-pl .list ul li .con .name .username {
+  color: #5997c0;
+  font-size: 13px !important;
+  float: left;
+}
+#mid-content .comment .cu-content-pl .list ul li .con .name .time {
+  color: #999999;
+  font-size: 13px !important;
+  float: right;
+}
+#mid-content .comment .cu-content-pl .list ul li .con .content {
+  font-size: 15px !important;
+  color: #606060;
+  line-height: 20px;
+}
+#mid-content .comment .Page_loading {
+  margin-top: 15px;
+  text-align: center;
+  font-family: "微软雅黑";
+  font-size: 16px;
+  padding: 10px 0px;
+  background-color: #f2f2f2;
+}
+.lastPage {
+  width: 100%;
+  height: .6rem;
+  background-color: #f2f2f2;
+  font-size: .14rem;
+  padding: .2rem 0;
+}
+.lastPage p {
+  width: 100%;
+  height: .25rem;
+  background-color: #f8f8f8;
+  line-height: .25rem;
+  text-align: center;
+}
+#footT-tools {
+  width: 100%;
+  height: .4rem;
+  background-color: #f7f7f7;
+  font-size: .14rem;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 0 .1rem;
+  overflow: hidden;
+}
+#footT-tools ul {
+  float: left;
+}
+#footT-tools ul li {
+  float: left;
+  line-height: .4rem;
+  margin-right: .03rem;
+}
+#footT-tools ul li a {
+  text-align: center;
+}
+.toTop {
+  width: 100%;
+  height: 1.45rem;
+  background-color: #f2f2f2;
+  padding: .9rem 0 .18rem 0;
+  margin-bottom: .45rem;
+}
+.toTop .login-tools {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+}
+.toTop .login-tools a {
+  float: left;
+  font-size: .14rem;
+  height: .35rem;
+  width: 33.3%;
+  text-align: center;
+  line-height: .35rem;
+  box-sizing: border-box;
+}
+.toTop .login-tools .sign {
+  border-right: 1px solid #c4c4c4;
+  border-left: 1px solid #c4c4c4;
+}
+#footer-end {
+  width: 100%;
+  height: .45rem;
+  background-color: #fcfcfc;
+  font-size: .12rem;
+  position: fixed;
+  bottom: 0;
+}
+#footer-end a {
+  display: inline-block;
+}
+#footer-end .footer-comment a {
+  width: 30%;
+  height: 100%;
+  padding-top: .06rem;
+  float: left;
+  text-align: center;
+  color: #666666;
+}
+#footer-end #iconfont {
+  width: 70%;
+  height: 100%;
+  float: left;
+  background-color: #ff9000;
+  text-align: center;
+  line-height: .45rem;
+  font-size: .16rem;
+  color: white;
+}
+.footer-page {
+  font-size: .14rem;
+  height: .77rem;
+  width: 100%;
+  padding: .2rem .3rem;
+  background-color: #f2f2f2;
+  position: relative;
+}
+.footer-page table {
+  text-align: center;
+}
+.footer-page table .mid-selectPage {
+  width: 100%;
+  text-align: center;
+}
+.footer-page table .mid-selectPage #selectPage {
+  width: 1.3rem;
+  height: .32rem;
+  text-align: center;
+}
+.footer-page table .mid-selectPage #selectPage option {
+  text-align: center;
+}
+.footer-page table a {
+  display: block;
+  line-height: .3rem;
+}
+.footer-page table .prePage {
+  position: absolute;
+  height: .3rem;
+  width: .82rem;
+  border: 1px solid #bababa;
+  left: .4rem;
+  border-radius: .05rem;
+  background-color: #dfdfdf;
+}
+.footer-page table .nextPage {
+  position: absolute;
+  height: .3rem;
+  width: .82rem;
+  border: 1px solid #bababa;
+  right: .4rem;
+  border-radius: .05rem;
+  background-color: #dfdfdf;
+}
+.footer-tools {
+  font-size: .14rem;
+  height: .4rem;
+  border: 1px solid #cccccc;
+  width: 100%;
+  background-color: #f3f3f3;
+  padding-left: .1rem;
+}
+.footer-tools .content li {
+  float: left;
+  line-height: .4rem;
+  margin-right: .05rem;
+}
+/*# sourceMappingURL=haitao.css.map */

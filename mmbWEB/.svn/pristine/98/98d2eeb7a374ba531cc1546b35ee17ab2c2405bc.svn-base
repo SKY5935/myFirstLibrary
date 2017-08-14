@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>肯德基优惠券 -- 慢慢买</title>
+    <link rel="stylesheet" href="./bootStarp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/coupon.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./font/download/font_6zdzznjozwd0a4i/iconfont.css">
+</head>
+
+<body>
+    <div class="coupon_bg hidden ">
+        <div class="coupon_bg_light">
+            <div class="coupon_bg_carousel">
+
+            </div>
+        </div>
+        <span id="coupon_prev" class="iconfont">&#xe62a;</span>
+        <span id="coupon_next" class="iconfont">&#xe62b;</span>
+
+    </div>
+    <div class="view" id="top">
+ <!-- coupon-top-tool --> 
+        <div class="coupon_top">
+            <div class="w">
+                <div class="coupon_title">
+                    <div class="coupon_back">
+                        <a href="coupon.html"><i class="iconfont icon-dayuhao"></i></a>
+                    </div>
+                    <h2>肯德基优惠券</h2>
+                    <div class="coupon_down">
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- coupon-infolist -->
+        <div class="couponList_lis">
+            <div class="couponList_lis_bar">
+                --点餐前出示手机中的优惠券，即可享受优惠--
+            </div>
+            <div class="coupon_table itemlists">
+                <!-- <a href="#">
+                    <div class="coupon_info">
+                        <div class="coupon_img">
+                            <img src="./images/kfc-5ikfc-81_p12.jpg" alt=" 两人小食组 香辣鸡2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2017年8月份凭肯德基优惠券">
+                        </div>
+                        <h4>C26 两人小食组 香辣鸡2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2017年8月份凭肯德基优惠券</h4>
+                        <div class="coupon_price">
+                            <h3>¥<em>33</em></h3>
+                        </div>
+                        <div class="coupon_time">
+                            有效期至8月31日
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+        <!-- couponList-tool -->
+        <div class="coupon_tool">
+            <div class="coupon_tool_box">
+                <a href="indexhu.html">首页</a>
+                <span>></span>
+                <a href="coupon.html">优惠券</a>
+                <span>></span>
+                <a href="javascript:;">肯德基优惠券</a>
+            </div>
+        </div>
+        <!-- couponList-footer -->
+        <div class="coupon_footer">
+            <div class="coupon_login">
+                <a href="#">登入</a>
+                <a href="#">注册</a>
+                <a href="#top"><img src="./images/top.jpg" alt="">返回顶部</a>
+            </div>
+            <div class="coupon_footerbottom">
+                <div class="coupon_footinfo">
+                    <a href="#">手机APP下载</a>
+                    <a href="#">慢慢买手机版</a> --掌上比价平台
+                </div>
+                <div class="coupon_footurl">
+                    <span>m.manmanbuy.com</span>
+                </div>
+            </div>
+        </div>
+        <!-- coupon-poster -->
+        <div class="coupon-poster">
+            <a href="#" onclick="alert('骗人滴~~~不要下')"><img src="./images/APP.png" alt=""></a>
+        </div>
+    </div>
+    <!-- Small modal -->
+
+
+</body>
+
+</html>
+<script src="./js/jquery-1.11.1.js"></script>
+<script src="./bootStarp/js/bootstrap.min.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./swiper/js/swiper.jquery.min.js"></script>
+<script type="text/html" id="table_template">
+    {{each result}}
+    <a href="javascript:;" class="itemlist clearfix">
+        <div class="coupon_info ">
+            <div class="coupon_img">
+                {{@$value.couponProductImg}}
+            </div>
+            <h4>{{$value.couponProductName}}</h4>
+            <div class="coupon_price">
+                <h3><em>{{$value.couponProductPrice}}</em></h3>
+            </div>
+            <div class="coupon_time">
+                {{$value.couponProductTime}}
+            </div>
+        </div>
+    </a>
+    {{/each}}
+</script>
+<script>
+    $(function () {
+        var allNum;
+        var mun
+        $.ajax({
+            url: "http://139.199.192.48:9090/api/getcouponproduct",
+            data: {
+                couponid: +GetQueryString("id"),
+            },
+            success: function (data2) {
+                $(".itemlists").append(template('table_template', data2))
+                // console.log(data2);
+                // console.log(data2.result[1]);
+                for (var i = 0; i < data2.result.length; i++) {
+                    $(data2.result[i].couponProductImg).appendTo($(".coupon_bg_carousel")).addClass(
+                        "coupon_image");
+                }
+                allNum = $('.coupon_image').length;
+                $(".coupon_bg_carousel").css("width", allNum + "00%")
+            }
+        })
+        //给a设置一个点击委托事件给body 让遮罩层显示
+        $("body").on("click", "a", function () {
+            //去掉隐藏的属性
+            $(".coupon_bg").removeClass("hidden");
+            //获取你点的这个a的下标
+            mun = $(this).index();
+            // console.log(mun)
+            //让装有图片的盒子水平移动图片的宽度*下标
+            $(".coupon_bg_carousel").css(
+                "transform", "translate(-" + mun * 160 + "px)"
+            )
+        });
+        //上一张图片
+        $("#coupon_prev").on("click", function () {
+            if (mun <= 0) {
+                mun = 0;
+            }
+            mun--;
+            $(".coupon_bg_carousel").css("transition", "transform .3s");
+            $(".coupon_bg_carousel").css("transform", "translate(-" + mun * 160 + "px)")
+        })
+        //下一张图片
+        $("#coupon_next").on("click", function () {
+            mun++;
+            if (mun > allNum - 1) {
+                mun = (allNum - 1);
+            }
+            $(".coupon_bg_carousel").css("transition", "transform .3s");
+            $(".coupon_bg_carousel").css("transform", "translate(-" + mun * 160 + "px)")
+        })
+        //点击取消遮罩层
+            $('.coupon_bg').on("click", function () {
+                $(".coupon_bg").addClass("hidden");
+            })
+        //阻止冒泡
+            stopMaopao("#coupon_prev");
+            stopMaopao("#coupon_next");
+            stopMaopao(".coupon-poster");
+            stopMaopao(".coupon_tool_box a");
+            stopMaopao(".coupon_footer a");
+
+        function stopMaopao(leiname) {
+            $(leiname).on("click", function (event) {
+                event.stopPropagation();
+            })
+        }
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    })
+</script>

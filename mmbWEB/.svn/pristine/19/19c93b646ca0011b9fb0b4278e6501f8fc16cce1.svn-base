@@ -1,0 +1,56 @@
+/*产品十大品牌*/
+
+.brand_view {
+    background-color: #f2f2f2;
+}
+
+
+/*导航栏*/
+
+.nav { 
+    height: .36rem;
+    font-size: .14rem; 
+    line-height: .36rem;  
+    background-color: #ebebeb;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ebebeb));
+    color: #5a5a5a;
+    border-top: solid 1px #ebebeb;
+    border-bottom: 1px solid #ccc;
+    padding-left: .14rem;
+    a {
+        display: inline;
+    }
+}
+
+
+/*产品十大品牌列表*/
+
+.topTenList {
+    // padding-left: 10px;
+    // padding-right: 10px;
+    .hotList {
+        height: .4rem;
+        font-size: .16rem;
+        color: #874640;
+        line-height: .4rem;
+        border-color: #eee;
+        padding-left: .1rem; 
+        margin: .1rem 0.05rem;
+        border: 1px solid #ccc;
+    }
+    ul {
+        padding-left: .1rem;
+        padding-right: .1rem;
+        li {
+            a {
+                background: url(http://www.zuyushop.com/wap/images/arrow1.gif) right center no-repeat;
+                height: .4rem;
+                line-height: .4rem;
+                border-bottom: 1px solid #ccc;
+                font-size: .16rem;
+                color: #000;
+                font-weight: 700;
+            }
+        }
+    }
+}

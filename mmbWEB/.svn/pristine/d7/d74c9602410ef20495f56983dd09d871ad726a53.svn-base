@@ -1,0 +1,62 @@
+@import "com.less";
+// 公共部分占个位
+@media screen and (width:640px) {
+    html,
+    body {
+        /* 100 */
+        font-size: 100px;
+    }
+}
+
+//头部公共部分
+
+section {
+    margin: .5rem .05rem .05rem;
+    border: 1px solid #cccccc;
+    border-radius: .1rem;
+    overflow: hidden;
+    .goodList > li {
+        .topText {
+            font-size: .16rem;
+            font-weight: bold;
+            height: .4rem;
+            width: 100%;
+            line-height: .4rem;
+            border-bottom: 1px solid #cccccc;
+            padding-left: .16rem;
+            span {
+                float: right;
+                display: block;
+                height: .14rem;
+                width: .26rem;
+                background: url(../images/icon_bar.png) no-repeat -1.4rem -.16rem;
+                background-size: 2.2rem 1.32rem;
+                transform: rotate(180deg); // box-sizing: border-box;
+                padding: .13rem 0 0;
+                margin-right: .08rem;
+            }
+        }
+        .bottomInfo {
+            border-bottom: 2px solid #888888;
+            ul {
+                li {
+                    height: .4rem;
+                    width: 33.33%;
+                    line-height: .4rem;
+                    text-align: center;
+                    float: left;
+                    font-size: .16rem;
+                    border-top: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                    background-color: #f9f9f9;
+                }
+                li:nth-child(-n+3){
+                    border-top: none;
+                }
+            }
+        }
+    }
+    li:last-child {
+        border-bottom: none;
+    }
+}

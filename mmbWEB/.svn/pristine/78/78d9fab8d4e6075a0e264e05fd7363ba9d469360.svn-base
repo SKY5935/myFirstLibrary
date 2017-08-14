@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/category.css">
+</head>
+
+<body>
+    <!--头部公共部分logo搜索等-->
+    <header class="header-com">
+        <a class="top-logo" href="javascript:;"></a>
+        <a class="top-download" href="javascript:;"></a>
+    </header>
+    <!--我的部分-->
+    <section>
+        <ul class='goodList'>
+
+            <!--<li class='electronics'>
+                <div class='topText'>大&nbsp;家&nbsp;电<span></span></div>
+                <div class="bottomInfo">
+                    <ul class="clearfix">
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                        <li>电视</li>
+                    </ul>
+                </div>
+            </li>-->
+
+
+        </ul>
+    </section>
+    <!--尾部公共部分登录注册返回顶部等-->
+    <footer class="footer-com">
+        <div class="footer-nav clearfix">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="javascript:;"><span class="iconfont">&#xe661;</span>返回顶部</a>
+        </div>
+        <div class="footer-description">
+            <p><a class="app-download" href="javascript:;">手机APP下载</a>
+                <a href="javascript:;"> 慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+</body>
+<script src="./js/jquery.min-1.72.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./js/url.js"></script>
+<script src="./js/tools.js"></script>
+<script type='text/html' id='parityTemplate'>
+    {{each result}}
+    <li>
+        <div class='topText' data-titleId='{{$value.titleId}}'>{{$value.title}}<span></span></div>
+        <div class="bottomInfo">
+
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script>
+    $(window).ready(function() {
+        $.ajax({
+                url: dataUrl.sortTitlt,
+                success: function(data) {
+                    console.log(data);
+                    $('.goodList').append(template('parityTemplate', data));
+                }
+            })
+            // var topText = document.querySelectorAll(".goodList > .topText");
+            // console.log(topText);
+        $('.goodList').on('click', '.topText', function() {
+            // for (var i = 0; i < topText.length; i++) {
+            //     itcast(topText[i]).tap(function() {
+            //         console.log('zuzhangshishabi');
+            var $this = $(this);
+            $this.next('div').toggle().parent().siblings().children('.bottomInfo').hide();
+
+            $.ajax({
+                url: dataUrl.sortList,
+                data: {
+                    titleid: $(this).attr('data-titleId')
+                },
+                success: function(data) {
+                    console.log(data);
+                    var num = Math.ceil(data.result.length / 3);
+                    var html = '<ul class="clearfix">';
+                    for (var i = 0; i < num * 3; i++) {
+                        categoryId = data.result[i] ? data.result[i].categoryId : "";
+                        category = data.result[i] ? data.result[i].category : "";
+                        html += '<li data-categoryId="' + categoryId + '">' + category +
+                            '</li>';
+                    }
+                    html += '</ul>';
+                    $this.next().html(html);
+                }
+            })
+        })
+        $.ajax({
+            url: dataUrl.sortName,
+            data: {
+                categoryid: 2
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        })
+        $.ajax({
+            url: dataUrl.sortInfo,
+            data: {
+                categoryid: 2
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        })
+        var bod = document.body;
+    })
+</script>
+
+</html>

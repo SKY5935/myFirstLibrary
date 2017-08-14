@@ -1,0 +1,195 @@
+@import './base.less';
+// header
+.view {
+    width: 100%;
+    clear: both;
+    background-color: #f2f2f2;
+    /*头部*/
+    header {
+        width: 100%;
+        height: 44px;
+        background-color: #ff841d;
+        position: relative;
+        .back {
+            width: 0.5rem;
+            height: 0.44rem;
+            position: absolute;
+            left: 0.1rem;
+            a {
+                width: 100%;
+                height: 44px;
+                line-height: 44px;
+                color: #fff;
+                background-position: 50px 0px;
+                font-size: 0.17rem;
+            }
+        }
+        h1 {
+            font-size: 0.2rem;
+            text-align: center;
+            font-weight: bold;
+            line-height: 44px;
+            color: #fff;
+            margin: 0px 0.52rem;
+        }
+        .home {
+            width: 50px;
+            position: absolute;
+            height: 44px;
+            right: 10px;
+            top: 0;
+            a {
+                position: relative;
+                width: 100%;
+                height: 44px;
+                background: url("./../images/header_app.png") center/32px no-repeat;
+            }
+        }
+    }
+    .cu-friend {
+        width: 100%;
+        background-color: #fff;
+        text-align: left;
+        font-size: 0.14rem;
+        margin: 0 auto;
+        ul {
+            width: 100%;
+            padding: 0px 0px 0.1rem 0px;
+            li {
+                float: left;
+                padding: 0.1rem 0 0 0.1rem;
+                text-align: center;
+                width: 50%;
+                border-right: 1px solid #eee;
+                border-bottom: 1px solid #eee;
+                background-color: #fff;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    .img {
+                        margin: 0.1rem auto;
+                        width: 1.4rem;
+                        height: 1.4rem;
+                        overflow: hidden;
+                        img {
+                            width: 1.4rem;
+                            height: 1.4rem;
+                        }
+                    }
+                    .title {
+                        color: #333;
+                        padding: 0 0.08rem;
+                        font-size: 0.14rem;
+                        text-align: left;
+                        line-height: 0.18rem;
+                        height: 0.36rem;
+                        overflow: hidden;
+                    }
+                    .subtit {
+                        color: #ff6c00;
+                        margin-top: 0.04rem;
+                        font-size: 0.14rem;
+                        padding: 0 0.08rem;
+                        text-align: left;
+                        line-height: 0.18rem;
+                        overflow: hidden;
+                        height: 0.18rem;
+                    }
+                    .info {
+                        padding: 0.06rem 0.08rem;
+                        font-size: 0.14rem;
+                        overflow: hidden;
+                        line-height: 0.24rem;
+                        .mall {
+                            text-align: left;
+                            color: #a1a1a1;
+                            font-size: 0.12rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .Page_loading {
+        margin-top: 0.15rem;
+        text-align: center;
+        font-size: 0.16rem;
+        background-color: #f8f8f8;
+        height: 0.32rem;
+        clear: both;
+        em {
+            margin: 0 auto;
+            img {
+                width: 0.32rem;
+                height: 0.32rem;
+                margin: 0 auto;
+            }
+        }
+    }
+    .ct100_Menu {
+        margin-top: 0.2rem;
+        background: linear-gradient(to bottom, #fff, #ebebeb);
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ccc;
+        font-size: 0.14rem;
+        padding-left: 0.08rem;
+        color: #000;
+        line-height: 0.36rem;
+        a {
+            float: left;
+            color: #000;
+        }
+    }
+    #ctl00_footerApp {
+        .foot_top {
+            background: #efefef;
+            border-top: 1px solid #c4c4c4;
+            border-bottom: 1px solid #c4c4c4;
+            height: 0.34rem;
+            line-height: 0.34rem;
+            margin-top: 0.25rem;
+            clear: both;
+            a {
+                float: left;
+                border-right: 1px solid #c4c4c4;
+                text-align: center;
+                width: 30%;
+                font-size: 0.14rem;
+                color: #000;
+                img {
+                    display: inline-block;
+                    width: 0.15rem;
+                    margin-top: -0.05rem;
+                }
+            }
+        }
+        .footer {
+            background: #efefef;
+            text-align: center;
+            font-size: 0.12rem;
+            padding: 0.15rem 0;
+            color: #666;
+            p {
+                padding: 0;
+                margin: 0;
+            }
+            a {
+                display: inline-block;
+                color: #000;
+            }
+        }
+    }
+}
+
+.slowbuy {
+    position: fixed;
+    right: 0;
+    bottom: 0.06rem;
+    z-index:999;
+     a {
+         width: 0.6rem;
+         display: block;
+        img {}
+    }
+}

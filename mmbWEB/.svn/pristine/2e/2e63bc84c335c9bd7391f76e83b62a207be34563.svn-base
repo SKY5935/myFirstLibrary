@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>zhekou.aspx</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/inlanddiscount.css">
+    <link rel="stylesheet" href="./css/zhekou.aspx.css">
+</head>
+
+<body>
+    <div class="view">
+        <!--header头部-->
+        <header>
+            <div class="back">
+                <a href="./inlanddiscount.html">
+                    <i class="iconfont">&#xe608;</i>
+                </a>
+            </div>
+            <h1>国内折扣</h1>
+            <div class="home">
+                <a href="javascript:;"></a>
+            </div>
+        </header>
+        <div class="container">
+
+        </div>
+        <div class="list">
+            <ul></ul>
+        </div>
+        <div class="ct100_Menu">
+            <a href="javascript:;">首页</a> &nbsp;>&nbsp; 省钱快曝
+            <div class="appbanner" id="Div1">
+                <div class="applogo"><img src="http://m.manmanbuy.com/download/images/logo.png"></div>
+                <div class="tit">
+                    慢慢买APP
+                    <div class="subtit">
+                        <p>专注全网比价，每一次购物都在为你省钱！</p>
+                    </div>
+                </div>
+                <div class="btn">
+                    <a href="javascript:;" class="a-install">立即打开</a>
+                </div>
+            </div>
+        </div>
+        <div id="ctl00_footerApp">
+            <div class="foot_top">
+                <a href="javascript:;">登录</a>
+                <a href="javascript:;">注册</a>
+                <a href="#" style="width: 39%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" class="back" width="15px" height="15px">
+                返回顶部</a>
+            </div>
+            <div class="footer">
+                <p>
+                    <a href="javascript:;" style="color: Red;">手机APP下载</a>
+                    <a href="javascript:;">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+                <p>m.manmanbuy.com
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slowbuy">
+        <a href="http://m.manmanbuy.com/app.html?type=right&amp;value=wap" width="0.03rem">
+        <img src="https://img.alicdn.com/imgextra/i2/379516416/TB2WepTeb1J.eBjSszcXXbFzVXa_!!379516416.png" >
+        </a>
+    </div>
+</body>
+
+</html>
+<script type="text/html" id="template">
+    <div class="cu-content">
+        <h3 class="title">{{productName}}</h3>
+        <h4>{{productPinkage}}</h4>
+        <div class="info">
+            <span class="mall">
+                    {{productFrom}}</span> <span class="addtime" style="margin-right: 4px;">
+                       {{productTime}}</span> <span class="author">
+                            {{productTips}}</span>
+        </div>
+        <div class="content clearfix">
+            <div class="picwrap">
+                {{@productImg2}}
+            <div class="conn" >
+                <!--内容开始-->
+                {{productInfo}}
+                {{productInfo1}}
+                <p>
+                    {{productInfo2}}
+                    <!--内容结束-->
+                </p>
+                {{@productImg2}}
+            </div>
+        </div>
+
+        <div class="golink">
+            <a href="javascript:;" target="_blank"><i class="icon-gobuy"></i>前往购买</a></div>
+    </div>
+    {{@productComment}}
+    <!--<div class="cu-content-pl">
+        <div class="tit">
+            发表评论</div>
+        <div class="reply">
+            <div class="form">
+                <textarea name="ctl00$ContentBody$txt_nr" id="ctl00_ContentBody_txt_nr" rows="3"></textarea>
+                <div class="ctrl">
+                    <input type="submit" name="ctl00$ContentBody$Button1" value="发表评论" id="ctl00_ContentBody_Button1" class="tjdp">
+                </div>
+            </div>
+        </div>
+        <div class="tit" id="newcomment">
+            最新评论</div>
+        <div class="list">
+            <ul>      
+
+            </ul>
+        </div>
+    </div>-->
+</script>
+<script src="./js/url.js"></script>
+<script src="./js/jquery-1.11.1.js"></script>
+<script src="./js/template-web.js"></script>
+<script src="./js/tools.js"></script>
+<script src="./js/zhekou.js"></script>

@@ -1,0 +1,87 @@
+//给导航栏中的每个li标签绑定一个点击事件，因为li标签是动态创建的，使用事件委托的方式添加；将点击事件添加给他的父元素
+//获取元素
+// var ul=document.querySelector(".LP_nav>ul");
+// console.log(ul);
+// //给ul绑定一个点击事件
+// ul.onclick=function(event){
+//     console.log(event);
+//     if(event.target.nodeName=="A"){
+//         event.target.classList.add("active");
+//     }
+// }
+$(function () {
+    // $(".rocket").hide();
+    $(window).scroll(function () {
+        // console.log(123);
+        // console.log($(window).scrollTop());
+        if ($(window).scrollTop() > 400) {
+            $(".rocket").show();
+        } else {
+            $(".rocket").hide();
+        }
+
+        $.ajax({
+            url: "http://139.199.192.48:9090/api/getbaicaijiaproduct",
+            data: {
+                titleid: 0
+            },
+            success: function (data) {
+                // console.log(data);
+                $(".LP_goodsList").append(template("goodsList", data));
+            }
+        })
+    })
+    //tab切换
+    $(".LP_nav>ul").on("click", "li", function () {
+        $(window).scrollTop(0);
+        var titleId = $(this).attr("data-id");
+        $(this).children().addClass("active").parent().siblings().children().removeClass("active");
+        if ($(window).scrollTop() > 500) {
+            $(".rocket").show();
+        } else {
+            $(".rocket").hide();
+        }
+        $.ajax({
+            url: "http://139.199.192.48:9090/api/getbaicaijiaproduct",
+            data: {
+                titleid: titleId
+            },
+            success: function (data) {
+                // console.log(data);
+                $(".LP_goodsList").html(template("goodsList", data));
+            }
+        })
+        //
+
+        //页面滚动是请求数据加载页面
+        $(window).scroll(1000, function () {
+            // console.log(123);
+            // $(".rocket").show();
+            $.ajax({
+                url: "http://139.199.192.48:9090/api/getbaicaijiaproduct",
+                data: {
+                    titleid: titleId
+                },
+                success: function (data) {
+                    // console.log(data);
+                    $(".LP_goodsList").append(template("goodsList", data));
+                }
+            })
+        })
+    })
+
+    //手指滑动事件
+    // $(".LP_nav>ul").tap(function(){
+    //     animate({
+    //         left:100
+    //     })
+    // })
+    //返回顶部
+    $(".rocket").click(function () {
+        $("body").animate({
+            scrollTop: 0
+        }, 500)
+    })
+
+})
+

@@ -1,0 +1,333 @@
+html,
+body,
+div,
+header,
+nav,
+li,
+ul,
+ol,
+footer,
+section,
+aside,
+input,
+article,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+  /* 盒子模型的 怪异模式  */
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 100px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* 移动端 a标签 点击高亮 */
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  /* 解决图片默认的3像素  */
+  display: block;
+}
+input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+}
+/* 清楚浮动 */
+.clearfix::after {
+  display: block;
+  content: "";
+  height: 0;
+  clear: both;
+}
+/*字体图标*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.header-com {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #ff841d;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.header-com .top-logo {
+  float: left;
+  width: 1.85rem;
+  height: 100%;
+  margin-left: 0.2rem;
+  background: url("../images/header_logo.png") no-repeat;
+  background-size: 1.85rem 0.25rem;
+  padding: 0.125rem 0;
+  box-sizing: border-box;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+.header-com .top-download {
+  float: right;
+  width: 0.68rem;
+  height: 100%;
+  box-sizing: border-box;
+  background: url("../images/header_app.png") no-repeat;
+  background-size: 0.34rem 0.34rem;
+  padding: 0.08rem 0.08rem;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  background-color: #efefef;
+  border-top: 1px solid #ccc;
+  color: #5a5a5a;
+}
+footer .footer-nav {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+footer .footer-nav a {
+  font-size: 0.14rem;
+  float: left;
+  width: 30%;
+  height: .34rem;
+  text-align: center;
+  line-height: .34rem;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+footer .footer-nav a span {
+  color: #747474;
+}
+footer .footer-nav a:last-child {
+  width: 40%;
+  border-right: none;
+}
+footer .footer-description {
+  width: 100%;
+  height: 0.6rem;
+  padding: 0.15rem 0;
+  font-size: 0.12rem;
+}
+footer .footer-description p {
+  text-align: center;
+}
+footer .footer-description p a {
+  display: inline-block;
+}
+footer .footer-description p .app-download {
+  color: #ff0000;
+}
+@media screen and (width: 640px) {
+  html,
+  body {
+    /* 100 */
+    font-size: 100px;
+  }
+}
+header .search {
+  margin-top: .5rem;
+  height: .5rem;
+  width: 100%;
+  padding: 0.1rem;
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: #ffffff;
+}
+header .search input {
+  float: left;
+  font-size: .16rem;
+  border-radius: .15rem;
+}
+header .search .search-txt {
+  background-color: #f1f1f1;
+  padding-left: .2rem;
+}
+header .search .search-btn {
+  position: absolute;
+  top: .1rem;
+  right: .1rem;
+  width: .6rem;
+  height: .3rem;
+  background-color: #ff841d;
+  color: #fff;
+  line-height: .3rem;
+}
+section {
+  margin: 1rem 0 .9rem;
+}
+section nav {
+  height: .4rem;
+  width: 100%;
+  line-height: .4rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: .18rem;
+  padding-left: .2rem;
+  position: relative;
+}
+section nav a {
+  display: inline-block;
+}
+section nav input {
+  display: inline-block;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.04rem;
+  height: .3rem;
+  width: .7rem;
+  border: 1px solid #b0b0b0;
+  border-radius: .1rem;
+  font-size: .18rem;
+  background-image: linear-gradient(to top, #efefef, #dedede);
+}
+section .productInfo .infoText {
+  word-break: break-all;
+  font-size: .22rem;
+  text-align: center;
+  padding: .2rem;
+}
+section .productInfo .infoImg {
+  position: relative;
+  height: 3rem;
+  width: 100%;
+}
+section .productInfo .infoImg img {
+  height: 2.4rem;
+  width: 3rem;
+  margin: 0 auto;
+}
+section .productInfo .infoImg span {
+  position: absolute;
+  right: .2rem;
+  bottom: .2rem;
+  height: .5rem;
+  width: .5rem;
+  line-height: .5rem;
+  text-align: center;
+  background-color: #8bc800;
+  color: lightgoldenrodyellow;
+  font-size: .16rem;
+  border: 1px solid lightgoldenrodyellow;
+  border-radius: 50%;
+}
+section .productInfo .infoPara {
+  overflow: hidden;
+}
+section .productInfo .infoPara ul li {
+  height: .4rem;
+  width: 33.33%;
+  line-height: .4rem;
+  text-align: center;
+  font-size: .16rem;
+  color: #fff;
+  background-color: #ffc62b;
+  border-top: 1px solid #da811e;
+  border-bottom: 1px solid #da811e;
+  border-right: 1px solid #da811e;
+  float: left;
+}
+section .productInfo .infoPara ul li a {
+  height: .38rem;
+}
+section .productInfo .infoPara ul li:last-child {
+  border-right: none;
+}
+section .productInfo .infoPrice {
+  position: relative;
+  font-size: .16rem;
+  height: .5rem;
+  line-height: .5rem;
+  border-bottom: 1px solid #c6c6c6;
+}
+section .productInfo .infoPrice table td {
+  padding: 0;
+  margin: 0;
+  height: .5rem;
+  line-height: .5rem;
+}
+section .productInfo .infoPrice table td img {
+  height: .3rem;
+  width: .3rem;
+  margin-left: .1rem;
+  margin-top: .07rem;
+}
+section .productInfo .infoPrice table td span {
+  margin-right: .1rem;
+}
+section .productInfo .infoPrice table .red {
+  color: red;
+}
+section .productInfo .infoWarn {
+  height: .4rem;
+  width: 100%;
+  line-height: .4rem;
+  padding-left: .1rem;
+  font-size: .16rem;
+  color: #9d9d9d;
+}
+section .commons .topText {
+  background-color: #dbdbdb;
+  height: .4rem;
+  width: 100%;
+  line-height: .4rem;
+  text-align: center;
+  font-size: .18rem;
+}
+section .commons .commomList li {
+  padding: .1rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+section .commons .commomList li .guy {
+  font-size: .16rem;
+  color: #767676;
+}
+section .commons .commomList li .guy .user .date {
+  float: right;
+}
+section .commons .commomList li .guy .source {
+  float: right;
+}
+section .commons .commomList li .detail {
+  padding-top: .1rem;
+  font-size: .16rem;
+}
+section .commons .more {
+  height: .6rem;
+  width: 100%;
+}
+section .commons .more input {
+  height: .3rem;
+  width: 96%;
+  background-image: linear-gradient(to top, #d5d5d5, #efefef);
+  border: 1px solid #c4c4c4;
+  border-radius: .05rem;
+  margin: .2rem auto;
+  text-align: center;
+}

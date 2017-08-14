@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>肯德基优惠券 -- 慢慢买</title>
+    <link rel="stylesheet" href="./bootStarp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/coupon.css">
+    <link rel="stylesheet" type="text/css" href="./font/download/font_6zdzznjozwd0a4i/iconfont.css">
+</head>
+
+<body>
+    <div class="view" id="top">
+        <!-- couponList-top-tool -->
+        <div class="coupon_top">
+            <div class="w">
+                <div class="coupon_title">
+                    <div class="coupon_back">
+                        <a href="coupon.html"><i class="iconfont icon-dayuhao"></i></a>
+                    </div>
+                    <h2>肯德基优惠券</h2>
+                    <div class="coupon_down">
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- coupon-infolist -->
+        <div class="couponList_lis">
+            <div class="couponList_lis_bar">
+                --点餐前出示手机中的优惠券，即可享受优惠--
+            </div>
+            <div class="coupon_table itemlists">
+                <!-- <a href="#">
+                    <div class="coupon_info">
+                        <div class="coupon_img">
+                            <img src="./images/kfc-5ikfc-81_p12.jpg" alt=" 两人小食组 香辣鸡2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2017年8月份凭肯德基优惠券">
+                        </div>
+                        <h4>C26 两人小食组 香辣鸡2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2017年8月份凭肯德基优惠券</h4>
+                        <div class="coupon_price">
+                            <h3>¥<em>33</em></h3>
+                        </div>
+                        <div class="coupon_time">
+                            有效期至8月31日
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+        <!-- couponList-tool -->
+        <div class="coupon_tool">
+            <div class="coupon_tool_box">
+                <a href="indexhu.html">首页</a>
+                <span>></span>
+                <a href="coupon.html">优惠券</a>
+                <span>></span>
+                <a href="#">肯德基优惠券</a>
+            </div>
+        </div>
+        <!-- couponList-footer -->
+        <div class="coupon_footer">
+            <div class="coupon_login">
+                <a href="#">登入</a>
+                <a href="#">注册</a>
+                <a href="#top"><img src="./images/top.jpg" alt="">返回顶部</a>
+            </div>
+            <div class="coupon_footerbottom">
+                <div class="coupon_footinfo">
+                    <a href="#">手机APP下载</a>
+                    <a href="#">慢慢买手机版</a> --掌上比价平台
+                </div>
+                <div class="coupon_footurl">
+                    <span>m.manmanbuy.com</span>
+                </div>
+            </div>
+        </div>
+        <!-- coupon-poster -->
+        <div class="coupon-poster">
+            <a href="#"><img src="./images/APP.png" alt=""></a>
+        </div>
+    </div>
+    <!-- Small modal -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                图片
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="./js/jquery.min-1.72.js"></script>
+<script src="./js/template-web.js"></script>
+<script type="text/html" id="table_template">
+    {{each result}}
+    <a href="javascript:;" class="itemlist clearfix">
+        <div class="coupon_info ">
+            <div class="coupon_img">
+                {{@$value.couponProductImg}}
+            </div>
+            <h4>{{$value.couponProductName}}</h4>
+            <div class="coupon_price">
+                <h3><em>{{$value.couponProductPrice}}</em></h3>
+            </div>
+            <div class="coupon_time">
+                {{$value.couponProductTime}}
+            </div>
+        </div>
+    </a>
+    {{/each}}
+</script>
+<script>
+    $(function () {
+        $.ajax({
+            url: "http://139.199.192.48:9090/api/getcouponproduct",
+            data: {
+                couponid: +GetQueryString("id"),
+            },
+            success: function (data2) {
+                $(".itemlists").append(template('table_template', data2));
+                console.log(data2);
+            }
+        })
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+        $('body').modal({
+            backdrop:'static',
+            keyboard:true,
+            show:true});
+    })
+</script>

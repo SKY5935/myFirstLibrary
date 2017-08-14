@@ -1,0 +1,236 @@
+@import "media.less";
+@import "base.less";
+
+
+
+body{
+  background-color: #f1f1f1;
+}
+
+/*顶部*/
+.skiphop_top{
+  position: relative;
+  height: 50px;
+  padding:0 .68rem 0 .5rem;
+  background-color: #ff8b00;
+  overflow: hidden;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  >a.glyphicon-menu-left{
+    position: absolute;
+    left: 0;
+    //top: .1rem;
+    width: .5rem;
+    height: inherit;
+    font-size: 24px;
+    color: #fff;
+    line-height: 50px;
+  }
+  >a.st_download{
+    position: absolute;
+    right: .1rem;
+    top: 0;
+    width: .68rem;
+    height: inherit;
+    background:url("../images/header_app.png") no-repeat center/.34rem .34rem;
+  }
+  background-size:.34rem .34rem;
+}
+
+/*头部菜单栏*/
+.skiphop_menu{
+  height: 50px;
+  position: relative;
+  padding-right: .5rem;
+  background-color: #fff;
+  border-bottom:2px solid #dadada;
+  overflow: hidden;
+  line-height: 50px;
+  .skm_left{
+    height: inherit;
+    border-right:1px solid #dadada;
+    li{
+      float: left;
+      position: relative;
+      width: 33.33%;
+      height: 50px;
+      a{
+        float: left;
+        height: inherit;
+        font-size: 25px;
+        margin-left: 40%;
+        line-height: 50px;
+        text-align: center;
+      }
+      .glyphicon-triangle-bottom{
+        float: left;
+        position: absolute;
+        //top: .17rem;
+        width: .24rem;
+        height: 50px;
+        margin-left: 0.05rem;
+        font-size: 16px;
+        color: #565656;
+        line-height: 50px;
+      }
+    }
+  }
+  .skm_right{
+    position: absolute;
+    right: 0.05rem;
+    top: -0.03rem;
+    width: .5rem;
+    height:inherit;
+    font-size: 35px;
+    color: #808080;
+    text-align: center;
+    line-height: 50px;
+  }
+
+  .show{
+    display: block;
+  }
+}
+
+
+/*店铺下拉框*/
+.skiphop_shop,
+.skiphop_area,
+.skiphop_priceDown{
+  position: absolute;
+  width: 100%;
+  background-color: #ffffff;
+  display: none;
+  z-index: 10;
+  li{
+    position: relative;
+    height: .5rem;
+    padding-left: .2rem;
+    line-height: .5rem;
+    font-size: .23rem;
+    color:black;
+    border-top:1px solid #ededed;
+  }
+  li.sp_draw::after{
+    content: '√';
+    display: block;
+    position: absolute;
+    right: .2rem;
+    top: 0.06rem;
+    width: .4rem;
+    height: 40px;
+    font-size: 30px;
+    color: #ff4400;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+
+/*筛选框*/
+.skiphop_filtrate{
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: .15rem;
+  background-color: #f7f7f7;
+  z-index: 10;
+  .spf_search{
+    position: relative;
+    padding-right: .8rem;
+    height: 55px;
+    >input{
+      font-size: .24rem;
+      padding-left: .5rem;
+      outline: none;
+    }
+    >span{
+      position: absolute;
+      top: 0.05rem;
+      left: 0;
+      width: .5rem;
+      height: inherit;
+      background: url("../images/icon_bar.png") -85px 5px;
+    }
+    >a{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: .8rem;
+      height:inherit;
+      line-height: .55rem;
+      font-size: 24px;
+      color: #000;
+      outline:none;
+      text-align: center;
+    }
+  }
+
+  .spf_sort,.spf_classify{
+    padding-top: .2rem;
+    >h4{
+      font-size: 30px;
+      color: #000;
+    }
+    >a{
+      float: left;
+      margin-right: .15rem;
+      padding:.1rem .6rem;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      font-size: 22px;
+      color: #000;
+    }
+    .sort_links{
+      text-decoration: none;
+      background-color: #ff9501;
+      color: #fff;
+    }
+  }
+
+  .spf_classify{
+    >a{
+      width: 23%;
+      text-align: center;
+      padding: .1rem;
+      margin-bottom: .15rem;
+    }
+  }
+}
+
+
+/*商品列表*/
+.skiphop_list{
+  padding: .10rem;
+  >a{
+    float: left;
+    width: 49%;
+    padding:.15rem .1rem;
+    margin-right: .15rem;
+    margin-bottom: .15rem;;
+    background-color: #fff;
+
+    >img{
+      width: 100%;
+      height: 4.5rem;
+    }
+    >p{
+      margin-top: .1rem;
+      font-size: 25px;
+      color: #000;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    >.skl_price{
+      color: red;
+      font-size: 35px;
+    }
+  }
+  >a:nth-of-type(2n){
+    margin-right: 0;
+  }
+}
+
+

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/com.css">
+    <link rel="stylesheet" href="./css/brand_detail.css">
+    <link rel="stylesheet" href="./font/lishuyi-font/iconfont.css">
+    <style>
+        em,
+        i {
+            font-style: normal;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .search {
+            height: .5rem;
+            padding: 0.1rem;
+            position: relative;
+            border-bottom: 1px solid #e6e6e6;
+            margin-top: .5rem;
+            background-color: #fff;
+        }
+
+        .search input {
+            float: left;
+            font-size: .16rem;
+            border-radius: .15rem;
+        }
+
+        .search .search-txt {
+            background-color: #f1f1f1;
+            padding-left: .2rem;
+        }
+
+        .search .search-btn {
+            position: absolute;
+            top: .1rem;
+            right: .1rem;
+            width: .6rem;
+            height: .3rem;
+            background-color: #ff841d;
+            color: #fff;
+            line-height: .3rem;
+        }
+
+        .bottom_distance {
+            margin-bottom: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brand_best_view">
+        <!--头部-->
+        <header class="header-com">
+            <a class="top-logo" href="javascript:;"></a>
+            <a class="top-download" href="javascript:;"></a>
+        </header>
+        <!--搜索框-->
+        <div class="search">
+            <input type="text" placeholder="请输入你想比价的商品" class="search-txt">
+            <input type="button" value="搜索" class="search-btn">
+        </div>
+        <!--导航栏-->
+        <div class="nav">
+            <a href="#">首页</a> >
+            <a href="./brand.html">品牌大全</a> > <span>平板电视</span>哪个牌子好
+        </div>
+        <!--产品品牌排行板-->
+        <div class="model">
+            <div class="bd_title"><span>平板电视</span>哪个牌子好</div>
+            <ul class="best_list">
+                <!--<li>
+                    <a href="#">
+                        <span class="top1">1</span><div class="product">
+                            <div class="tit">海信平板电视</div>
+                            <p>30天全网销量 : 343434件</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="top2">2</span><div class="product">
+                            <div class="tit">海信平板电视</div>
+                            <p>30天全网销量 : 343434件</p>
+                        </div>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+        <!--产品销量排行-->
+        <div class="model">
+            <div class="bd_title"><span>平板电视</span>产品销量排行</div>
+            <ul class="ProList">
+                <!--<li>
+                    <a class="clearfix" href="#">
+                        <div class="pic"><img src="http://www.zuyushop.com:8013/ProPic/201612/Thumb/Thumb_2016120016544872739.jpg" alt=""></div>
+                        <div class="info">
+                            <div class="tit">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视</div>
+                            <div class="price">
+                                <em>￥6599.00</em>
+                                <span class="star">★★★★★</span>
+                            </div>
+                            <div class="others">
+                                <em>报价(10)</em>
+                                <em>全网评论(36424)</em>
+                            </div>
+                        </div>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+
+        <!--最有用的用户评论-->
+        <div class="model">
+            <div class="bd_title"><span>平板电视</span>最有用的用户评论</div>
+            <ul class="usefulComment">
+                <!--<li>
+                    <a href="#">
+                        <div class="proInfo clearfix">
+                            <div class="pic"><img src="http://www.zuyushop.com:8013/ProPic/201612/Thumb/Thumb_2016120016544872739.jpg" alt=""></div>
+                            <p>LG 49LF5400 49英寸 全高清 普通LED液晶电视</p>
+                        </div>
+                    </a>
+                    <div class="proComt">
+                        <a href="#">
+                            <div class="comtTime">
+                                <span class="user">8***m :</span>
+                                <span class="star">★★★★★</span>
+                                <em>2014/12/20</em>
+                            </div>
+                            <p>这款液晶电视对比其它品牌电视最喜欢的是采用IPS硬屏液晶面板， 屏幕比较坚固，质量应该比其它液晶面板会好，极其突出了这款电视的性价比； 色彩使用了1920*1080P的分辨率，三重XD引擎，提高了色质的水准、对比度和清晰度，
+                                呈现的画质和性能画面色彩也比较清晰，显示效果也比较细腻自然； 外观方面采用生动锐利铜钱纹样设计，简约的白色电视底座搭配银色的窄边框感觉比较简单时尚， 也是比较喜欢的；功能使用简单，菜单键进入图像，生意，设置，时间，选项，输入，
+                                我的媒体8个功能主题，2组HDMI接口满足了我的DVD设备和网络电视机顶和的使用， 1组数字音响输出满足我外接5.1音响系统的需要，画面比例点对点扫描， 让我接电脑主机的画面设置更简单；炫亮人声Ⅰ，畅听清晰对话的设计。
+                                自动识别和加强电影和电视节目中的人声的功能，使我听到的背景声音更清晰突显， 标注.音乐.电影.运动.游戏五个声音模式选择满足了日常视听的需求。 LG的国际品牌也是比较让大家信赖的。
+                            </p>
+                        </a>
+                    </div>
+                </li>-->
+            </ul>
+        </div>
+
+        <!--最新的用户评论-->
+        <div class="model bottom_distance">
+            <div class="bd_title"><span>平板电视</span>最新评论</div>
+            <ul class="newestComment">
+                <li>
+                    <a href="#">
+                        <div class="proInfo clearfix">
+                            <div class="pic"><img src="http://www.zuyushop.com:8013/ProPic/201612/Thumb/Thumb_2016120016544872739.jpg" alt=""></div>
+                            <p>LG 49LF5400 49英寸 全高清 普通LED液晶电视</p>
+                        </div>
+                    </a>
+                    <div class="proComt">
+                        <a href="#">
+                            <div class="comtTime">
+                                <span class="user">8***m :</span>
+                                <span class="star">★★★★★</span>
+                                <em>2014/12/20</em>
+                            </div>
+                            <p>这款液晶电视对，使我听到的背景声音更清晰突显， 标注.音乐.电影.运动.游戏五个声音模式选择满足了日常视听的需求。
+                            </p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--底部-->
+        <footer class="footer-com">
+            <div class="footer-nav clearfix">
+                <a href="javascript:;">登录</a>
+                <a href="javascript:;">注册</a>
+                <a href="javascript:;"><span class="iconfont">&#xe661;</span>返回顶部</a>
+            </div>
+            <div class="footer-description">
+                <p><a class="app-download" href="javascript:;">手机APP下载</a>
+                    <a href="javascript:;"> 慢慢买手机版</a> -- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+<script src="./js/jquery.min-1.72.js"></script>
+<script src="./js/template-web.js"></script>
+<!--品牌标题对应的十大品牌模板-->
+<script type="text/html" id="template1">
+    {{each result}}
+    <li>
+        <a href="#">
+            <span {{if $index <= 2 }} class="top{{$index+1}}"{{/if}}>{{$index+1}}</span><div class="product">
+                <div class="tit">{{$value.brandName}}</div>
+                <p>{{$value.brandInfo}}</p>
+            </div>
+            <i class="iconfont icon-more" style="font-size:.24rem;float:right;line-height:40px"></i>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<!--品牌标题对应的十大品牌的销量排行商品列表-->
+<script type="text/html" id="template2">
+    {{each result}}
+    <li>
+        <a class="clearfix" href="#">
+            <!--<div class="pic"><img src="{{$value.productImg}}" alt=""></div>-->
+            <div class="pic">{{@$value.productImg}}</div>
+            <div class="info">
+                <div class="tit">{{$value.productName}}</div>
+                <div class="price">
+                    <em>{{$value.productPrice}}</em>
+                    <span class="star">★★★★★</span>
+                </div>
+                <div class="others">
+                    <em>{{$value.productQuote}}</em>
+                    <em>{{$value.productCom}}</em>
+                </div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<!--请求销量排行商品的评论-->
+<script type="text/html" id="template3">
+    {{each result}}
+    <li>
+        <a href="#">
+            <div class="proInfo clearfix">
+                <div class="pic">{{@$value.productImg}}</div>
+                <p>{{$value.productName}}</p>
+            </div>
+        </a>
+        <div class="proComt">
+            <a href="#">
+                <div class="comtTime">
+                    <span class="user">8***m :</span>
+                    <span class="star">★★★★★</span>
+                    <em>2014/12/20</em>
+                </div>
+                <p>这款液晶电视对，使我听到的背景声音更清晰突显， 标注.音乐.电影.运动.游戏五个声音模式选择满足了日常视听的需求。
+                </p>
+            </a>
+        </div>
+    </li>
+    {{/each}}
+</script>
+
+<script>
+    $(function () {
+        //获取品牌的标题Id
+            //方法1
+        // function GetQueryString(name) {
+        //     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        //     var r = window.location.search.substr(1).match(reg);
+        //     if (r != null) return unescape(r[2]); return null;
+        // }
+            
+            //方法2
+        function getRequest() {
+            var url = window.location.search; //获取url中"?"符后的字串   
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    //就是这句的问题
+                    theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+                    //之前用了unescape()
+                    //才会出现乱码  
+                }
+            }
+            return theRequest;
+        }
+
+        //获取到上个页面点击的那个品牌的id
+        var brandId = getRequest().id;
+        console.log(brandId);
+        //获取到上个页面点击的品牌的名称
+        var brandName = getRequest().id1.slice(0,4);
+        console.log(brandName);
+        //修改相应的品牌
+        $('.nav > span').html(brandName);
+        $('.bd_title > span').html(brandName);
+
+
+        //请求品牌标题对应的十大品牌
+        $.ajax({
+            url: 'http://139.199.192.48:9090/api/getbrand',
+            data: { brandtitleid: brandId },
+            success: function (data) {
+                console.log(data);
+                var result = template('template1', data);
+                $('.best_list').append(result);
+            }
+        });
+
+        //请求品牌标题对应的十大品牌的销量排行商品列表
+        $.ajax({
+            url: 'http://139.199.192.48:9090/api/getbrandproductlist',
+            data: { brandtitleid: brandId, pagesize: 4 },
+            success: function (data) {
+                console.log(data);
+                var productid = data.result[0].productId;
+                console.log(productid);
+                var result = template('template2', data);
+                $('.ProList').append(result);
+
+                //最新商品品论
+                var result1 = template('template3', data);
+                $('.usefulComment').append(result1);
+
+                //请求销量排行商品的评论
+                $.ajax({
+                    url: 'http://139.199.192.48:9090/api/getproductcom',
+                    data: { productid: productid },
+                    success: function (data) {
+                        console.log(data);
+                        //获取返回的数据 ---> 主要拿去其中的相关的用户评论
+                        var comment = data.result;
+                        console.log(comment);
+                        //获取要放评论内容的元素
+                        var proComt = document.querySelectorAll(".proComt");
+
+                        //给对应的品牌添加评论
+                        for (var i = 0; i < proComt.length; i++) {
+                            var html = '<a href="#">' +
+                                '<div class="comtTime">' +
+                                '<span class="user">' + comment[i].comName + '</span>' +
+                                '<span class="star">★★★★★</span>' +
+                                '<em>' + comment[i].comTime + '</em>' +
+                                '</div>' +
+                                '<p>' + comment[i].comContent + '</p>' +
+                                '</a> ';
+                            // $('.proComt').eq(i).html(html);
+                            proComt[i].innerHTML = html;
+                        }
+                    }
+                })
+            }
+        })
+
+        //回到顶部
+        $(".footer-com a").eq(2).click(function () {
+            window.scrollTo(0, 0);
+        })
+
+    })
+
+</script>

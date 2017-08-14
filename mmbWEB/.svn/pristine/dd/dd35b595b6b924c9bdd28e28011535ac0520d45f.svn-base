@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>品牌大全</title>
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/com.css">
+    <link rel="stylesheet" href="./css/brand.css">
+    <style>
+        .search {
+            height: 0.5rem;
+            padding: 0.1rem;   
+            position: relative;
+            border-bottom: 1px solid #e6e6e6; 
+            margin-top: .5rem;
+            background-color: #fff;
+        }
+
+        .search input {
+            float: left;
+            font-size: .16rem;
+            border-radius: .15rem;
+        }
+
+        .search .search-txt {
+            background-color: #f1f1f1;
+            padding-left: .2rem;
+        }
+
+        .search .search-btn {
+            position: absolute;
+            top: .1rem;
+            right: .1rem;
+            width: .6rem;
+            height: .3rem;
+            background-color: #ff841d;
+            color: #fff;
+            line-height: .3rem;
+        }
+        .topTenList {
+            margin-bottom: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="brand_view">
+        <!--头部-->
+        <header class="header-com">
+            <a class="top-logo" href="javascript:;"></a>
+            <a class="top-download" href="javascript:;"></a>
+        </header>
+        <!--搜索框-->
+        <div class="search">
+            <input type="text" placeholder="请输入你想比价的商品" class="search-txt">
+            <input type="button" value="搜索" class="search-btn">
+        </div>
+        <!--导航栏-->
+        <div class="nav">
+            <a href="#">首页</a> > 品牌大全
+        </div>
+        <!--产品十大品牌-->
+        <div class="topTenList">
+            <div class="hotList">热门品牌排行</div>
+            <ul>
+                <!--<li><a href="#">平板电视十大品牌</a></li>-->
+            </ul>
+        </div>
+        <!--底部-->
+        <footer class="footer-com">
+            <div class="footer-nav clearfix">
+                <a href="javascript:;">登录</a>
+                <a href="javascript:;">注册</a>
+                <a href="javascript:;"><span class="iconfont">&#xe661;</span>返回顶部</a>
+            </div>
+            <div class="footer-description">
+                <p><a class="app-download" href="javascript:;">手机APP下载</a>
+                    <a href="javascript:;"> 慢慢买手机版</a> -- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+<script src="./js/jquery.min-1.72.js"></script>
+<script src="./js/template-web.js"></script>
+<script type="text/html" id="template">
+    {{each result}}
+    <li><a href="./brand_detail.html?id={{$value.brandTitleId}}&id1={{$value.brandTitle}}">{{$value.brandTitle}}</a></li>
+    {{/each}}
+</script>
+<script>
+    $(function () {
+        $.ajax({
+            url: 'http://139.199.192.48:9090/api/getbrandtitle',
+            success: function (data) {
+                console.log(data);
+                var result = template('template', data);
+                $('.topTenList ul').append(result);
+            }
+        })
+
+        //回到顶部
+        $(".footer-com a").eq(2).click(function(){
+				window.scrollTo(0,0);
+			})
+    })
+
+</script>

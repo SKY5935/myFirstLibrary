@@ -1,0 +1,72 @@
+
+
+
+
+.market-nav {
+  font-size: 0.24rem;
+  color:white;
+  height: 0.6rem;
+  line-height: 0.8rem;
+  background-color: #ff841d;
+  h2 {
+    text-align: center;
+    line-height: 0.6rem;
+    font-size: 0.35rem;
+    position: relative;  
+    margin: 0; 
+    .nav-left {  
+      float:left;
+      margin-left: 0.1rem;    
+      >a {
+        color:white;
+	
+      }
+    }
+    .nav-right {
+      right:0.1rem;
+      top:50%;
+      transform: translateY(-35%);
+      position: absolute;
+      line-height:0.8rem;
+      font-size: 0.2rem;
+      height:0.5rem;
+      width:0.68rem;
+      
+	background: url(../images/header_app.png) no-repeat;
+  background-size: 0.4rem 0.4rem;
+      &::before {
+        position: absolute;
+        top:-0.25rem;
+        font-size: 0.3rem;
+        left:50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.content {
+  font-size: 0.20rem;
+  margin-top:0.15rem;
+  margin:0.15rem 0.4rem 0;
+  >div {
+    background-color: #f4f4f4;
+    border:1px solid #d7d7d7;
+    display: inline-block;
+    margin:0.1rem 0.2rem;
+    >a {
+      box-sizing: content-box;
+      padding: 0.08rem 0.08rem 0.08rem 0.5rem;
+      position: relative;
+      img {
+        position: absolute;
+        height: 0.3rem;
+        width: 0.3rem;
+        background-size: cover;
+        top:50%;
+        transform: translateY(-50%);
+        left:0.1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootStarp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/skiphop.css">
+</head>
+
+<body>
+    <!--顶部-->
+    <div class="skiphop_top">
+        <a href='' class='glyphicon glyphicon-menu-left' id="skiphop_back"></a>
+        凑单品
+        <a href="" class='st_download '></a>
+    </div>
+
+    <!--头部菜单栏-->
+    <div class="skiphop_menu">
+        <div class="skm_left">
+            <ul class="clearfix" id='sm_drop'>
+                <li id='skiphop_shop'><a href="javascript:;">
+                京东
+            </a>
+                    <span class='glyphicon glyphicon-triangle-bottom triangle' id='shop'></span>
+                </li>
+                <li id='skiphop_area'><a href="javascript:;">
+                华北(北京、山西等)
+            </a>
+                    <span class='glyphicon glyphicon-triangle-bottom triangle' id='area'></span>
+                </li>
+                <li id='skiphop_priceDown'><a href="javascript:;">
+                全部价格
+            </a>
+                    <span class='glyphicon glyphicon-triangle-bottom triangle' id='price'></span>
+                    <!--<span class='iconfont' id='price'>&#xe64f;</span>-->
+                </li>
+            </ul>
+        </div>
+        <span class="skm_right glyphicon glyphicon-th-list" id='sky_right'></span>
+        <!--<span class="skm_right glyphicon iconfont" id='sky_right'>&#xe64f;</span>-->
+    </div>
+    <div class="sp_drop_down_box clearfix">
+        <!--店铺下拉框-->
+        <div class="skiphop_shop sp_drop_down">
+            <ul></ul>
+        </div>
+
+        <!--区域下拉框-->
+        <div class="skiphop_area sp_drop_down">
+            <ul>
+            </ul>
+        </div>
+
+        <!--价格下拉框-->
+        <div class="skiphop_priceDown sp_drop_down">
+            <ul>
+                <li><a href="javascript:;">全部价格 <span class='sp_draw'></span></a></li>
+                <li><a href="javascript:;">1-3元 <span></span></a></li>
+                <li><a href="javascript:;">3-5元<span></span></a></li>
+                <li><a href="javascript:;">5-10元<span></span></a></li>
+                <li><a href="javascript:;">10-15元<span></span></a></li>
+                <li><a href="javascript:;">15元以上<span></span></a></li>
+            </ul>
+        </div>
+
+    </div>
+    <!--筛选框-->
+
+    <div class="skiphop_filtrate" id='skiphop_filtrate'>
+        <div class="spf_search">
+            <input type="search" placeholder='搜索您想要的凑单品'>
+            <span></span>
+            <a>搜索</a>
+        </div>
+
+        <div class="spf_sort clearfix">
+            <h4>排序</h4>
+            <a href="javascript:;" class='sort_links'>销量</a>
+            <a href="javascript:;">价格↓</a>
+            <a href="javascript:;">价格↑</a>
+        </div>
+
+        <div class="spf_classify clearfix">
+            <h4>分类</h4>
+            <a href="javascript:;" class='sort_links'>全部</a>
+            <a href="javascript:;">家居</a>
+            <a href="javascript:;">数码</a>
+            <a href="javascript:;">办公</a>
+            <a href="javascript:;">个护</a>
+            <a href="javascript:;">食品</a>
+            <a href="javascript:;">母婴</a>
+            <a href="javascript:;">服饰</a>
+        </div>
+    </div>
+
+    <!--商品列表-->
+    <div class="skiphop_list clearfix">
+
+    </div>
+
+</body>
+
+</html>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/zepto.js"></script>
+<script src="js/event.js"></script>
+<script src="bootStarp/js/bootstrap.min.js"></script>
+<script src="js/template-web.js"></script>
+<script src="js/url.js"></script>
+
+<!--商品列表模板-->
+<script type='text/html' id='templates'>
+    {{each result}}
+    <a href="javascript:;">
+        <img src="{{$value.productImg}}" alt="">
+        <p>{{$value.productName}}</p>
+        <div class="skl_price">
+            {{$value.productPrice}}
+        </div>
+    </a>
+    {{/each}}
+</script>
+
+<!--店铺下拉框模板-->
+<script type='text/html' id='templates1'>
+    {{each result}}
+    <li data-shopid='{{$value.shopId}}'><a href="javascript:;">{{$value.shopName}} <span id='shop_draw'></span></a></li>
+    {{/each}}
+</script>
+
+<!--区域下拉框模板-->
+<script type='text/html' id='templates2'>
+    {{each result}}
+    <li data-shopid='{{$value.areaId}}'><a href="javascript:;">{{$value.areaName}}<span id='area_draw'></span></a></li>
+    {{/each}}
+</script>
+<script src="js/skiphop.js"></script>
